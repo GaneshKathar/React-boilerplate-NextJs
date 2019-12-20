@@ -1,5 +1,7 @@
 import React from "react";
 import App from "next/app";
+import store from "../src/Redux/store";
+import { Provider } from "react-redux";
 
 class MyApp extends App {
   render() {
@@ -7,7 +9,9 @@ class MyApp extends App {
 
     return (
       <div>
-        <Component {...pageProps} />
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>
       </div>
     );
   }
