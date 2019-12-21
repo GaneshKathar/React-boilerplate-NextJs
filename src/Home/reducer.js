@@ -1,24 +1,15 @@
 import { INCREMENT_COUNTER } from "./action";
-
+import { createReducer, mergeObject } from "../Redux/helpers";
 const initialState = {
   count: 0
 };
 
 const incrementCount = (state, { payload }) => {
-  const updatedState = Object.assign({}, state, {
+  return mergeObject(state, {
     count: state.count + payload.count
   });
-  return updatedState;
 };
 
-const reducer = (state = initialState, action) => {
-  console.log(action.type);
-  switch (action.type) {
-    case INCREMENT_COUNTER:
-      return incrementCount(state, action);
-    default:
-      return state;
-  }
-};
-
-export default reducer;
+export default createReducer(initialState, {
+  [INCREMENT_COUNTER]: incrementCount
+});
