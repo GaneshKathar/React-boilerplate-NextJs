@@ -1,4 +1,1 @@
-# next-initial-setup
-Next BASIC APP with REDUX and SAGA
-
-Added helper to create the action and reducer.
+# React-boilerplate with Redux, Redux-Saga, and Next.JS 
